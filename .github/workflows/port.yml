@@ -39,7 +39,7 @@ jobs:
          run: |
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
-              xz -c -9 ErfanGSIs/output/*.img
+              xz -9 ErfanGSIs/output/*.img
  
              
        - name: Upload Image

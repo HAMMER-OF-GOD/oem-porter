@@ -34,19 +34,12 @@ jobs:
        
        - name: Download Stock Rom & Generate GSI
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME --$TYPE
-       
-       - name: ZIP 
-         run: |
-              mkdir final
-              sudo chmod -R 777 ErfanGSIs/output
-              xz -9 ErfanGSIs/output/*.img
- 
              
        - name: Upload Image
          uses: actions/upload-artifact@v2
          with:
           name: Image
-          path: "ErfanGSIs/output/*.img.xz"
+          path: "ErfanGSIs/output/*.img"
           
           
        - name: Print build info

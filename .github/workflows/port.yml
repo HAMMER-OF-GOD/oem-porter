@@ -1,0 +1,54 @@
+name: Building GSI..
+
+on: push
+    
+env:
+  ROM_URL: https://downloads.sourceforge.net/project/xiaomi-eu-multilang-miui-roms/xiaomi.eu/MIUI-WEEKLY-RELEASES/21.2.24/xiaomi.eu_multi_HMNote7_21.2.24_v12-10.zip?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fxiaomi-eu-multilang-miui-roms%2Ffiles%2Fxiaomi.eu%2FMIUI-WEEKLY-RELEASES%2F21.2.24%2Fxiaomi.eu_multi_HMNote7_21.2.24_v12-10.zip%2Fdownload&ts=1614852496
+  ROM_NAME: MIUI
+  TZ: Europe/London
+  MIR: cow
+  ZIP_NAME: xiaomi.eu
+  TYPE: ab
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@master
+           
+       - name: Initializing environment
+         run: |
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install git openjdk-8-jdk wget
+       
+       - name: Clone ErfanGSI Source Code
+         run: git clone --recurse-submodules https://github.com/00p513-dev/ErfanGSIs-channel.git  ErfanGSIs
+       
+       - name: Setting up ErfanGSI requirements
+         run: |
+              sudo chmod -R 777 ErfanGSIs
+              cd ErfanGSIs
+              sudo bash setup.sh
+       
+       - name: Download Stock Rom & Generate GSI
+         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME --$TYPE
+       
+       - name: ZIP 
+         run: |
+              mkdir final
+              sudo chmod -R 777 ErfanGSIs/output
+              xz -c -9 ErfanGSIs/output/*.img
+             - name: artifact
+             
+       - name: Upload Image
+         uses: actions/upload-artifact@v2
+         with:
+          name: Image
+          path: "ErfanGSIs/output/*.img.xz"
+          
+          
+       - name: Print build info
+         run: |
+              cat ErfanGSIs/output/*.txt

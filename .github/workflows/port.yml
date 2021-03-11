@@ -7,7 +7,7 @@ env:
   ROM_NAME: MIUI
   TZ: Europe/London
   MIR: cow
-  ZIP_NAME: MIUIGlobal
+  ZIP_NAME: MIUICN
   TYPE: ab
 jobs:
   build:

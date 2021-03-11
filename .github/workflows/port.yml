@@ -3,11 +3,11 @@ name: Building GSI..
 on: push
     
 env:
-  ROM_URL: https://bigota.d.miui.com/V12.0.1.0.QFGMIXM/miui_LAVENDERGlobal_V12.0.1.0.QFGMIXM_c3fa7eb012_10.0.zip
+  ROM_URL: https://bigota.d.miui.com/21.3.10/miui_LAVENDER_21.3.10_9ddd1f16db_10.0.zip
   ROM_NAME: MIUI
   TZ: Europe/London
   MIR: cow
-  ZIP_NAME: MIUIGlobal
+  ZIP_NAME: MIUI-CN
   TYPE: ab
 jobs:
   build:

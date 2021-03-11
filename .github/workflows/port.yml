@@ -3,11 +3,11 @@ name: Building GSI..
 on: push
     
 env:
-  ROM_URL: https://jztkft.dl.sourceforge.net/project/xiaomi-eu-multilang-miui-roms/xiaomi.eu/MIUI-WEEKLY-RELEASES/21.3.3/xiaomi.eu_multi_HMNote7_21.3.3_v12-10.zip
+  ROM_URL: https://bigota.d.miui.com/V12.0.1.0.QFGMIXM/miui_LAVENDERGlobal_V12.0.1.0.QFGMIXM_c3fa7eb012_10.0.zip
   ROM_NAME: MIUI
   TZ: Europe/London
   MIR: cow
-  ZIP_NAME: xiaomi.eu
+  ZIP_NAME: MIUIGlobal
   TYPE: ab
 jobs:
   build:

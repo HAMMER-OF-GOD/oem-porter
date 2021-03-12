@@ -3,7 +3,7 @@ name: Building GSI..
 on: push
     
 env:
-  ROM_URL: https://bigota.d.miui.com/21.3.10/miui_LAVENDER_21.3.10_9ddd1f16db_10.0.zip
+  ROM_URL: https://downloads.sourceforge.net/project/xiaomi-eu-multilang-miui-roms/xiaomi.eu/MIUI-WEEKLY-RELEASES/21.3.10/xiaomi.eu_multi_HMNote7_21.3.10_v12-10.zip?ts=1615580522&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fxiaomi-eu-multilang-miui-roms%2Ffiles%2Fxiaomi.eu%2FMIUI-WEEKLY-RELEASES%2F21.3.10%2Fxiaomi.eu_multi_HMNote7_21.3.10_v12-10.zip%2Fdownload
   ROM_NAME: MIUI
   TZ: Europe/London
   MIR: cow

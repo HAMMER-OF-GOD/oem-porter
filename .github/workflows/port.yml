@@ -7,7 +7,7 @@ env:
   ROM_NAME: Pixel
   TZ: Europe/London
   MIR: cow
-  TYPE: ab
+  TYPE: arm32_binder64
   DEVICE: channel
 jobs:
   build:
